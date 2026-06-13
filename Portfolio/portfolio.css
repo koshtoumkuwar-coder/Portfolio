@@ -1,0 +1,194 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --primary-color: #2563eb;
+    --secondary-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --primary-color: #60a5fa;
+    --secondary-color: #1f1f1f;
+    --card-bg: #252525;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+section,
+aside {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   PROJECTS GRID
+========================= */
+
+#projects {
+    display: grid;
+    gap: 1.5rem;
+}
+
+#projects article {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* =========================
+   FLEXBOX COMPONENTS
+========================= */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-card {
+    flex: 1 1 250px;
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   DESKTOP VIEW
+========================= */
+
+@media (min-width: 1024px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+section,
+article,
+aside {
+    transition: transform 0.3s ease;
+}
+
+section:hover,
+article:hover,
+aside:hover {
+    transform: translateY(-5px);
+}

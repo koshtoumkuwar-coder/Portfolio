@@ -7,6 +7,7 @@
     <meta name="description" content="Personal Portfolio Website showcasing skills, projects, and contact information.">
     <meta name="keywords" content="Portfolio, Web Developer, HTML5, Accessibility, WCAG">
     <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="portfolio.css">
 
     <title>My Portfolio</title>
 </head>
@@ -134,6 +135,23 @@
     <footer>
         <p>&copy; 2026 Your Name. All Rights Reserved.</p>
     </footer>
+    <button id="theme-toggle">
+    Toggle Theme
+</button>
+
+<script>
+const toggleBtn = document.getElementById("theme-toggle");
+
+toggleBtn.addEventListener("click", () => {
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme === "dark" ? "light" : "dark"
+    );
+});
+</script>
 
 </body>
 </html>
